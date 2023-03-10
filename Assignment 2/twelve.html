@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twelve Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1>Jquery Tutorial</h1>
+    <span>Generate Dynamically Table using button click</span><br><br>
+    <input type="button" id="btnGenerate" value="Generate Table" />
+    <hr />
+    <div id="dvTable">
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            $("#btnGenerate").click(function () {
+                //Build an array containing Customer records.
+                var customers = new Array();
+                customers.push(["Customer Id", "Name", "Country"]);
+                customers.push([1, "Alkesh Rohit", "India"]);
+                customers.push([2, "Cristiano ronaldo", "Portugal"]);
+                customers.push([3, "Virat Kohli", "India"]);
+                customers.push([4, "Joe Root", "UK"]);
+
+                //Create a HTML Table element.
+                var table = $("<table />");
+                table[0].border = "1";
+
+                //Get the count of columns.
+                var columnCount = customers[0].length;
+
+                //Add the header row.
+                var row = $(table[0].insertRow(-1));
+                for (var i = 0; i < columnCount; i++) {
+                    var headerCell = $("<th />");
+                    headerCell.html(customers[0][i]);
+                    row.append(headerCell);
+                }
+
+                //Add the data rows.
+                for (var i = 1; i < customers.length; i++) {
+                    row = $(table[0].insertRow(-1));
+                    for (var j = 0; j < columnCount; j++) {
+                        var cell = $("<td />");
+                        cell.html(customers[i][j]);
+                        row.append(cell);
+                    }
+                }
+
+                var dvTable = $("#dvTable");
+                dvTable.html("");
+                dvTable.append(table);
+            });
+        });
+    </script>
+</body>
+
+</html>

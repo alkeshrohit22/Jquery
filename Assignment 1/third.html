@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Third Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1>Jquery Tutorial</h1>
+    <div>
+        <img src="images/hoodie-blue.jpg" alt="hoodie-blue" srcset="">
+    </div>
+    <button id="b1">Fade In</button><button id="b2">Fade out</button>
+
+    <script>
+        $(document).ready(function () {
+            $("#b1").click(function () {
+                $("img").fadeIn("5000");
+            });
+            $("#b2").click(function () {
+                $("img").fadeOut("5000");
+            });
+        });
+    </script>
+</body>
+
+</html>

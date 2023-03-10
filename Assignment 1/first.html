@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<body>
+    <h1>This is Jquery tuturial</h1>
+    <p>This is Alkesh Rohit!!!</p>
+    <p>I am in Sigma info Solution.</p>
+    <p>How are you ???</p>
+    <button>Remove First P</button>
+    
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $("p:first").remove();
+            });
+        });
+    </script>
+</body>
+
+</html>

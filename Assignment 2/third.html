@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Third Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1>Jquery Tutorial </h1>
+    <span>Remove third from many paragraph tag</span>
+    <div>
+        <p>This is First Paragraph!</p>
+        <p>This is Second Paragraph!!</p>
+        <p>This is Third (Remove this) Paragraph!!!</p>
+        <p>This is Fourth Paragraph!!!!</p>
+        <p>This is Fifth Paragraph!!!!!</p>
+        <p>This is Sixth Paragraph!!!!!!</p>
+    </div><br>
+    <button type="button">Remove Third</button>
+    <script>
+        $(document).ready(function () {
+            $('button').click(function () {
+                $('p:nth-of-type(3)').remove();
+            });
+        });
+    </script>
+</body>
+
+
+</html>

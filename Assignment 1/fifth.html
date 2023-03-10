@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fifth Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1>Jquery Assignment</h1>
+    <h3>Form for comment only!!!</h3>
+    <form action="" method="post">
+        <label for="TextBox">Comment</label>
+        <textarea name="textBox" id="textBox" cols="30" rows="10" required></textarea>
+        <span id="lblError" style="color: red"></span><br>
+        <br>
+
+    </form>
+
+    <script>
+        $(document).ready(function () {
+            $('#textBox').keypress(function (e) {
+                var keyCode = e.keyCode || e.which;
+
+                $("#lblError").html("");
+
+                //Regex for Valid Characters i.e. Alphabets and Numbers.
+                var regex = /^[A-Za-z0-9]+$/;
+
+                //Validate TextBox value against the Regex.
+                var isValid = regex.test(String.fromCharCode(keyCode));
+                if (!isValid) {
+                    $("#lblError").html("Only Alphabets and Numbers allowed.");
+                }
+
+                return isValid;
+            });
+        });
+    </script>
+</body>
+
+</html>

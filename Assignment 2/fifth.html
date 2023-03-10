@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fifth Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1>Jquery Tutorial</h1>
+    <span>Change the anchor tag href and open in private window</span>
+
+    <div>
+        <p>This is Gmail Link link <a href="https://www.gmail.com">Gmail.com</a></p>
+        <p>Click below button to chnage link</p>
+        <button type="button" id="button">Click to change link</button>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('#button').click(function () {
+                $('a').attr('href', 'https://google.com');
+                $('a').attr('target', "_blank");
+            });
+        });
+    </script>
+</body>
+
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eighth Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <style>
+        h1{
+            margin-left: 500px;
+        }
+        p{
+            margin-left: 520px;
+        }
+        div{
+            background-color: blanchedalmond;
+            padding-left: 430px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Jquery Tutorial</h1>
+    <p>Hide Div on Image hover!!!</p>
+    <div>
+        <img src="images/hoodie-blue.jpg" alt="hoodie-blue" srcset="">
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $('img').mouseout(function(){
+                $('div').show();
+            });
+            $('img').mouseover(function(){
+                $('div').hide();
+            });
+        });
+    </script>
+</body>
+
+</html>

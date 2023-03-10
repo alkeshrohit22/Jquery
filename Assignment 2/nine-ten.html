@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nine and Ten Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <style>
+        div{
+            background-color: bisque;
+            height: 300px;
+            width: 400px;
+            margin-top: 50px;
+            text-align: center ;
+            padding-top: 40px;
+            overflow: hidden;
+        }
+        button{
+            margin-left: 70px;
+            color: yellowgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Jquery Tutorial</h1> 
+    <span>Append text in div and Remove from div</span>
+    <div>
+        <p>This is already in div!!!</p> 
+    </div>
+    <br><br>
+    <button type="button" id="appendButton">Append text</button>
+    <button type="button" id="removeButton">Remove text</button>
+    <script>
+        $(document).ready(function(){
+            $('#appendButton').click(function(){
+                $('div').append('<br /><p>This is new text !!!</p>');
+            });
+            $('#removeButton').click(function(){
+                $('div>p').remove();
+            });
+        });
+    </script>
+</body>
+
+</html>

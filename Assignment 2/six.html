@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sixth Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Jquery Tutorial</h1>
+    <span>Change p tag text dynamically on button click</span>
+    <div>
+        <p>This is old p tag context!!!</p>
+    </div>
+    <button type="button">Click to change text</button>
+    <script>
+        $(document).ready(function(){
+            $('button').click(function(){
+                $('p').text("This is new p tag context!!!");
+            });
+        });
+    </script>
+</body>
+
+</html>

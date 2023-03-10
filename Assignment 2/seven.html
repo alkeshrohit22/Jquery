@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eight Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <style>
+        div {
+            height: 200px;
+            width: 300px;
+            background-color: bisque;
+            position: absolute;
+        }
+        button{
+            margin-top: 200px;
+            margin-left: 90px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <h1>Jquery Tutorial</h1>
+    <p>Move div to left</p>
+    <div id="mainDiv"></div>
+    <br><br>
+    <button id="button">click to Move</button>
+    <script>
+        $(document).ready(function () {
+            $('#button').click(function () {
+                var div = $('#mainDiv');
+                div.animate({
+                    'left': '900px',
+                    'opacity': '0.5',
+                    'height': '250px',
+                    'width': '350px',
+                }, 'slow');
+                div.animate({
+                    'top': '400px',
+                    'opacity': '1',
+                    'height': '200px',
+                    'width': '300px'
+                }, 'slow');
+                // div.animate({
+                //     'left': '900px',
+                //     'opacity': '0.5',
+                //     'height': '250px',
+                //     'width': '350px'
+                // }, 'slow');
+                // div.animate({
+                //     'bottom': '400px',
+                //     'opacity': '0.5',
+                //     'height': '250px',
+                //     'width': '350px'
+                // }, 'slow');
+            });
+        });
+    </script>
+</body>
+
+
+</html>

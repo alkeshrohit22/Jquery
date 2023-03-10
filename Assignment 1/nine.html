@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nine Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1>Jquery Tutorial</h1>
+    <p>Phone number validation</p>
+    <form action="">
+        <label for="phone-no">Enter Phone Number</label>&nbsp&nbsp;
+        <input type="text" name="phone-no" id="phone-no">
+        <span id="lblError" style="color: red"></span>
+    </form>
+    
+    <script>
+        $(document).ready(function () {
+            $('#phone-no').keypress(function (e) {
+                var keyCode = e.keyCode || e.which;
+    
+                $("#lblError").html("");
+    
+                //Regex for Valid Characters i.e. Numbers.
+                var regex =  /^[0-9]{10}$/g;
+
+                ///^[0-9]+$/;
+
+                //Validate TextBox value against the Regex.
+                var isValid = regex.test((keyCode));
+                if (!isValid) {
+                    $("#lblError").html("Only Numbers allowed.");
+                }
+                
+    
+                return isValid;
+            });
+        });
+    </script>
+</body>
+
+
+</html>

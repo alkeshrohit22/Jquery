@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Second Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Jquery Tutorial</h1>
+    <div class="div">
+        This is first div!!!
+    </div>
+    <div class="div">
+        This is second div!!!
+    </div>
+    <div class="div">
+        This is third div!!!
+    </div>
+    
+    <script>
+        $(document).ready(function(){
+            $('.div').hover(function(){
+                $(this).css({"background-color":"black" , "color": "white"});
+            }, function(){
+                $(this).css({"background-color":"white" , "color": "black"});
+            });
+        });
+    </script>
+</body>
+
+</html>

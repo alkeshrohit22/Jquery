@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <style>
+        div{
+            background-color: green;
+            width: 300px;
+            height: 200px;
+            text-align: center;
+        }
+        button {
+            margin-left: 65px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Jquery Tutorial</h1>
+    <p>Change Background Color of div on button click</p>
+    <div class="change_back">
+        Div 1
+    </div>
+    <br>
+    <div class="change_back">
+        Div 2
+    </div>
+    <br><br>
+    <button type="button">Change Background</button>
+    <script>
+        $(document).ready(function(){
+            $('button').click(function(){
+                $('.change_back').css("background-color",'red');
+            });
+        });
+    </script>
+</body>
+
+</html>

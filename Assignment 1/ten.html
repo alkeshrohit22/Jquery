@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ten Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <style>
+        h1 {
+            display: block;
+            margin-left: 400px;
+            color: black;
+            font-weight: bolder;
+            font-size: 70px;
+        }
+
+        table {
+            width: 70%;
+            height: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 50px;
+        }
+
+        th {
+            height: 70px;
+            background-color: orange;
+            color: white;
+        }
+
+        tr {
+            text-align: center;
+        }
+
+        button {
+            margin-left: 605px;
+        }
+
+        #button2 {
+            background-color: orangered;
+            padding-left: 20px;
+            padding-right: 17px;
+        }
+
+        #button3 {
+            background-color: greenyellow;
+            margin-left: 580px;
+        }
+
+        .cut {
+            height: 10px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <h1>Daily Routine</h1>
+    <button type="button" id="button3">Scroll Down</button>
+    <table border="2px">
+        <thead>
+            <tr>
+                <th>Day</th>
+                <th>Subject</th>
+                <th>Sport</th>
+                <th>Lunch</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Monday</td>
+                <td>HTML</td>
+                <td>Football</td>
+                <td>Veg Salad</td>
+            </tr>
+            <tr>
+                <td>Tuesday</td>
+                <td>CSS</td>
+                <td>Cricket</td>
+                <td>Punjabi Food</td>
+            </tr>
+            <tr>
+                <td>Wednesday</td>
+                <td>Javascript</td>
+                <td>Carrom</td>
+                <td>Rajasthani Food</td>
+            </tr>
+            <tr>
+                <td>Thirsday</td>
+                <td>Jquery</td>
+                <td>Kabbadi</td>
+                <td>Gujarati Good</td>
+            </tr>
+            <tr>
+                <td>Friday</td>
+                <td>PHP</td>
+                <td>Rest</td>
+                <td>Veg Salad</td>
+            </tr>
+            <tr>
+                <td>Saturday</td>
+                <td>Laravel</td>
+                <td>Cricket</td>
+                <td>Salad</td>
+            </tr>
+            <tr>
+                <td>Sunday</td>
+                <td>Novel Books</td>
+                <td>Rest</td>
+                <td>Street Food</td>
+            </tr>
+
+        </tbody>
+    </table><br>
+    <button type="button" id="button1" name="button">Change Color</button>
+    <div class="cut"></div>
+    <button type="button" id="button2">Scroll Top</button>
+
+    <script>
+        $(document).ready(function () {
+            $('#button1').click(function () {
+                $('table tr:even').css("background-color", "yellow");
+                $('table tr:odd').css('background-color', 'lightblue');
+            });
+
+            //scroll top
+            $('#button2').click(function () {
+                $('html, body').animate({
+                    scrollTop: '0px'
+                }, 1500);
+                return false;
+            });
+
+            //scroll down
+            $('#button3').click(function () {
+                $('html, body').animate({
+                    scrollTop: $(document).height()
+                }, 1500);
+                return false;
+            });
+        });
+    </script>
+</body>
+
+
+</html>

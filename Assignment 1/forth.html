@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forth Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Jquery Tutorial</h1>
+    <h3>Remove last Row</h3>
+    <table id="table">
+        <tr>
+            <th>Sr</th><th>First Name</th><th>Last Name</th><th></th>
+        </tr>
+        <tr>
+            <td>1</td><td>Alkesh</td><td>Rohit</td>
+        </tr>
+        <tr>
+            <td>2</td><td>Rohit</td><td>Alkesh</td>
+        </tr>
+        <tr>
+            <td>3</td><td>Nikunj</td><td>Rohit</td>
+        </tr>
+        <tr>
+            <td>4</td><td>Virat</td><td>Kohli</td>
+        </tr>
+        <tr>
+            <td>5</td><td>Cristiano</td><td>Ronaldo</td>
+        </tr>
+        <tr>
+            <td>6</td><td>Rohit</td><td>Sharma</td>
+        </tr>
+    </table><br>
+    <button>Remove last Row</button>
+    
+    <script>
+        $(document).ready(function(){
+            $('button').click(function(){
+                $('tr:nth-last-child(1)').remove();
+            });
+        });
+    </script>
+</body>
+
+</html>

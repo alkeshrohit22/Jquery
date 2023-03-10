@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Second Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+
+<body>
+<h1>Jquery Assignment</h1>
+<p>Text box's Content copy</p>
+<form action="" method="post">
+    <label for="firstTextbox">First Text Box</label>
+    <input type="text" id="firstTextbox" /><br><br>
+
+    <label for="secondTextbox">Second Text Box</label>
+    <input type="text" id="secondTextbox" />
+    <br><br>
+    <button type="button" id="copybutton">Copy</button>
+</form>
+<script>
+    $(document).ready(function(){
+        var value = '';
+        $('#copybutton').click(function(){
+            value = $("#firstTextbox").val();
+            $("#secondTextbox").val(value);
+        });
+    });
+</script>
+</body>
+
+</html>
