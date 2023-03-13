@@ -21,24 +21,33 @@
     
     <script>
         $(document).ready(function () {
+            var count = 0;
             $('#phone-no').keypress(function (e) {
+                
                 var keyCode = e.keyCode || e.which;
-    
+
+                
                 $("#lblError").html("");
     
                 //Regex for Valid Characters i.e. Numbers.
-                var regex =  /^[0-9]{10}$/g;
+                var regex =  /^[0-9]+$/;
 
                 ///^[0-9]+$/;
 
                 //Validate TextBox value against the Regex.
-                var isValid = regex.test((keyCode));
+                var isValid = regex.test(String.fromCharCode(keyCode));
+
                 if (!isValid) {
                     $("#lblError").html("Only Numbers allowed.");
+                } else {
+                    count += 1;
                 }
                 
-    
-                return isValid;
+                if(count > 10){
+                    $("#lblError").html("To many Number!!!.");
+                }
+
+                return isvalid;
             });
         });
     </script>
