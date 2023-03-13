@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +9,40 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
+
 <body>
-    
+    <h2>Jquery Assignment</h2>
+    <span>Select country and state using dropdown</span><br><br>
+    <form action="" method="post">
+        <label>Country:</label>
+        <select class="country">
+            <option>Select</option>
+            <option value="usa">United States</option>
+            <option value="india">India</option>
+            <option value="uk">United Kingdom</option>
+            <option value="china">China</option>
+            <option value="Australia">Australia</option>
+        </select><br><br>
+        <div id="response">
+            <!--Response will be inserted here-->
+        </div>
+    </form>
+    <script>
+        $(document).ready(function () {
+            $("select.country").change(function () {
+                var selectedCountry = $(".country option:selected").val();
+                $.ajax({
+                    type: "POST",
+                    url: "six.php",
+                    data: {
+                        country: selectedCountry
+                    }
+                }).done(function (data) {
+                    $("#response").html(data);
+                });
+            });
+        });
+    </script>
 </body>
+
 </html>
