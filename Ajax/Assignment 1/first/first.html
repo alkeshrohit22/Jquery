@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Ajax Tutorial</h2>
+        <span>Print Text Area data into paragraph tag when button click.</span>
+        <p id="firstp">This is paragraph data!!!</p>
+
+        <form action="" method="POST" id="myform">
+            <label for="textArea">TextArea : </label>
+            <textarea name="textArea" id="textArea" cols="30" rows="10"></textarea><br><br>
+            <button type="submit" name="submitBtn" id="submitBtn">Click Me</button>
+        </form>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $('#submitBtn').click(function(e){
+                var value = $('#textArea');
+                e.preventDefault();
+                $.ajax({
+                    url : 'first.php',
+                    type : 'POST',
+                    data : value,
+                    success : function(resp){
+                        $('#myform').hide();
+                        $('#firstp').text(resp);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
