@@ -2,7 +2,7 @@
 
 include_once 'connection.php';
 
-$result = '';
+$result = '<h1>Form data</h1>';
 
 //get data from html form
 $fname = $_POST['fname'];
