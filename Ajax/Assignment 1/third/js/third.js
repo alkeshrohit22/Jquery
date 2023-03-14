@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $("#submitBtn").click(function(){
+    $("#submitBtn").click(function(e){
         e.preventDefault();
         var value = $('#myform').serialize();
         $.ajax({

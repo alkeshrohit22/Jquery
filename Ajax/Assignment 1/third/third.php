@@ -1,7 +1,5 @@
 <?php
 
-use LDAP\Result;
-
 include_once 'connection.php';
 
 $result = '';
