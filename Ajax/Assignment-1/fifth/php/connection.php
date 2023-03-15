@@ -1,5 +1,4 @@
 <?php
-
 $servername = "localhost";
 $username = "admin";
 $password = "admin";
@@ -22,7 +21,6 @@ try {
         )";
     $conn->exec($dbtable);
 
-//   echo "Connected successfully";
 } catch (PDOException $e) {
     echo "Connection failed: " . $e->getMessage();
 }
