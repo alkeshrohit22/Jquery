@@ -1,0 +1,102 @@
+body {
+    margin: 10px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    background-color: white;
+}
+
+.container {
+    /* background-color: white; */
+    align-items: center;
+    margin: 20px 0px 0px 0px;
+}
+
+.container h1 {
+    margin: 0px 0px 15px 400px;
+    font-size: 50px;
+    color: black;
+}
+
+.formdiv {
+    display: inline-block;
+    margin: 0px 0px 0px 230px;
+}
+
+.formdiv input {
+    width: 300px;
+    color: grey;
+    height: 20px;
+}
+
+.formdiv label {
+    font-size: medium;
+    color: black;
+    font-weight: bold;
+}
+
+.formdiv button {
+    height: 30px;
+    text-align: center;
+    /* width: 80px; */
+}
+
+.formdata {
+    margin: 30px 0px 0px 120px;
+    padding: 0px;
+    width: 100%;
+}
+
+.formdata table {
+    border: 2px solid black;
+    padding: 0px;
+    border-collapse: collapse;
+}
+
+.formdata tr{
+    width: 100%;
+    position: relative;
+    padding: 0px;
+}
+
+.formdata th {
+    padding: 0px;
+}
+
+.formdata .title {
+    width: 550px;
+    height: 30px;
+}
+
+.formdata .rating {
+    width: 250px;
+    height: 30px;
+}
+
+.formdata .button {
+    width: 250px;
+    height: 30px;
+}
+
+
+/* icon for title */
+.formdata .title .icon-up {
+    position: absolute;
+    top: 0px;
+    left: 295px;
+}
+.formdata .title .icon-down {
+    position: absolute;
+    top: 10px;
+    left: 295px;
+}
+
+/* icon for rating */
+.formdata .rating .icon-up2 {
+    position: absolute;
+    top: 0px;
+    left: 703px;
+}
+.formdata .rating .icon-down2 {
+    position: absolute;
+    top: 10px;
+    left: 703px;
+}

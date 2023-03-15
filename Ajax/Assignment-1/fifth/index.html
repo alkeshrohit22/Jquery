@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fifth Document</title>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>My Favourite Movies</h1>
+        <div class="formdiv">
+            <form action="" method="post">
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title" value="" placeholder="Movie Title" required>&nbsp;&nbsp;
+
+                <label for="rating">Rating</label>
+                <input type="number" id="rating" name="rating" value="" placeholder="Rate the movie from 1 to 10"
+                    required>&nbsp;&nbsp;&nbsp;
+
+                <button type="submit" id="submitBtn" name="submitBtn">Add Movies</button>
+                
+            </form>
+        </div>
+        <div class="formdata">
+            <table border="1px" id="myTable">
+                    <thead id='theader'>
+                        <tr>
+                            <th class="title">Title<i class="material-icons icon-up">&#xe316;</i><i
+                                    class="material-icons icon-down">&#xe313;</i></th>
+                            <th class="rating">Rating<i class="material-icons icon-up2">&#xe316;</i><i
+                                    class="material-icons icon-down2">&#xe313;</i></th>
+                            <th class="button">Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+
+                    </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="js/index.js"></script>
+
+</body>
+
+</html>
