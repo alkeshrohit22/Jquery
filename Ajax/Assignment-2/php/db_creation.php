@@ -42,12 +42,15 @@ try {
     $user_password = $_POST['password'];
 
     if($user_username == $db_username ){
-        $return_array = array('username_success' => 'success');
+        $return_array = array('username' => 'success');
+    } else {
+        $return_array['username'] = 'failed';
     }
 
     if($user_password == $db_password) {
-        $return_array = array('password_success' => 'success');
-        //array_push($return_array, 'password_suceess' => 'success');
+        $return_array['password'] = 'success';
+    } else {
+        $return_array['password'] = 'failed';;
     }
 
     echo json_encode($return_array);
