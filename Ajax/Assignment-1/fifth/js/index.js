@@ -76,7 +76,6 @@ function viewData() {
 
 
 function ascOrder(n) {
-    alert('called!!');
     var table, rows, switching, i, x, y, shouldSwitch, switchcount = 0;
 
     //getting table
@@ -119,7 +118,6 @@ function ascOrder(n) {
 }
 
 function descOrder(n) {
-    alert('function desc function callled in movies');
     var table, rows, switching, i, x, y, shouldSwitch, switchcount = 0;
 
     //getting table

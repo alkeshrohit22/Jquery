@@ -36,6 +36,9 @@ body {
 .formdiv button {
     height: 30px;
     text-align: center;
+    background-color: grey;
+    color: white;
+    border-radius: 7px;
     /* width: 80px; */
 }
 
@@ -59,6 +62,7 @@ body {
 
 .formdata th {
     padding: 0px;
+    background-color: SlateBlue;
 }
 
 .formdata .title {
@@ -103,4 +107,21 @@ body {
     top: 22px;
     left: 709px;
     cursor: pointer;
+}
+
+#deleteBtn {
+    height: 30px;
+    text-align: center;
+    background-color: red;
+    color: white;
+    border-radius: 7px;
+    width: 100px;
+}
+
+tr:nth-child(even){
+    background-color: lightgray;
+}
+
+tr:nth-child(odd){
+    background-color: white;
 }
