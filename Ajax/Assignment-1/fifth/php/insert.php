@@ -8,7 +8,6 @@ $result = '';
 $return_array = array();
 
 try {
-
     $movie_title = $_POST['title'];
     $movie_rating = (int) $_POST['rating'];
 
@@ -24,7 +23,7 @@ try {
 
     $stmt->bindParam(':title', $movie_title);
     $stmt->bindParam(':rating', $movie_rating);
-    $stmt->execute();
+    // $stmt->execute();
 
     $return_array = array('Success'=>'Success');
     echo json_encode($return_array);

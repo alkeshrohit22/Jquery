@@ -22,20 +22,22 @@
                 <input type="text" id="title" name="title" value="" placeholder="Movie Title" required>&nbsp;&nbsp;
 
                 <label for="rating">Rating</label>
-                <input type="number" id="rating" name="rating" maxlength = "10" minlength="0" value="" placeholder="Rate the movie from 1 to 10"
-                    required>&nbsp;&nbsp;&nbsp;
+                <input type="number" id="rating" name="rating" maxlength="10" minlength="0" value=""
+                    placeholder="Rate the movie from 1 to 10" required>&nbsp;&nbsp;&nbsp;
 
-                <button type="submit" id="submitBtn" name="submitBtn" >Add Movies</button>
+                <button type="submit" id="submitBtn" name="submitBtn">Add Movies</button>
             </form>
         </div>
         <div class="formdata">
             <table border="1px" id="myTable">
                 <thead id='theader'>
                     <tr>
-                        <th class="title">Title<i class="material-icons icon-up">&#xe316;</i><i
-                                class="material-icons icon-down">&#xe313;</i></th>
-                        <th class="rating">Rating<i class="material-icons icon-up2">&#xe316;</i><i
-                                class="material-icons icon-down2">&#xe313;</i></th>
+                        <th class="title">Title<i onclick="javascript:ascOrder(0)"
+                                class="material-icons icon-up">&#xe316;</i>
+                            <i onclick="javascript:descOrder(0)" class="material-icons icon-down">&#xe313;</i>
+                        </th>
+                        <th class="rating">Rating<i onclick="ascOrder(1)" class="material-icons icon-up2">&#xe316;</i><i
+                                onclick="javascript:descOrder(1)" class="material-icons icon-down2">&#xe313;</i></th>
                         <th class="button">Delete</th>
                     </tr>
                 </thead>

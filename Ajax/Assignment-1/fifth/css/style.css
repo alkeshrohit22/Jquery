@@ -82,11 +82,13 @@ body {
     position: absolute;
     top: 0px;
     left: 295px;
+    cursor: pointer;
 }
 .formdata .title .icon-down {
     position: absolute;
     top: 10px;
     left: 295px;
+    cursor: pointer;
 }
 
 /* icon for rating */
@@ -94,9 +96,11 @@ body {
     position: absolute;
     top: 0px;
     left: 703px;
+    cursor: pointer;
 }
 .formdata .rating .icon-down2 {
     position: absolute;
     top: 10px;
     left: 703px;
+    cursor: pointer;
 }

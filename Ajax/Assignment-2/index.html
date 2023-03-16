@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="login-page">
+        <div class="form">
+            <div class="login">
+                <div class="login-header">
+                    <h3>LOGIN</h3>
+                    <p>Please enter your credentials to login.</p>
+                </div>
+            </div>
+            <form class="login-form" id="loginform" method="post">
+                <span class="error">*</span>
+                <input type="text" id="username" name="name" placeholder="admin">
+
+                <span class="error">*</span>
+                <input type="text" id="password" name="password" placeholder="admin">
+
+                <button type="submit" id="loginBtn" value="submit" >Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
