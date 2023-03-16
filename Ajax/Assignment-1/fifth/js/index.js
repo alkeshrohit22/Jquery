@@ -1,6 +1,5 @@
 $(document).ready(function () {
-    $('#submitBtn').click(function (e) {
-        e.preventDefault();
+    $('#movie_form').submit(function (e) {
         $.ajax({
             url: 'php/insert.php',
             type: 'POST',
@@ -22,7 +21,9 @@ $(document).ready(function () {
                 alert("Error : " + resp);
             }
         });
+        e.preventDefault();
     });
+
 });
 
 function moveToDelete(id) {
@@ -98,11 +99,11 @@ function ascOrder(n) {
             //condition for rating column
             if (n === 1) {
                 if (Number(x.innerHTML) > Number(y.innerHTML)) {
-                  shouldSwitch = true;
-                  break;
+                    shouldSwitch = true;
+                    break;
                 }
                 //condition for movie title
-            } else if(x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()){
+            } else if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
                 shouldSwitch = true;
                 break;
             }
@@ -140,11 +141,11 @@ function descOrder(n) {
             //condition for rating column
             if (n === 1) {
                 if (Number(x.innerHTML) < Number(y.innerHTML)) {
-                  shouldSwitch = true;
-                  break;
+                    shouldSwitch = true;
+                    break;
                 }
                 //condition for movie title
-            } else if(x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()){
+            } else if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
                 shouldSwitch = true;
                 break;
             }
