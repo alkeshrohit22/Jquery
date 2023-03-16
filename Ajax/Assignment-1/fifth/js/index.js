@@ -96,18 +96,17 @@ function ascOrder(n) {
             x = rows[i].getElementsByTagName("TD")[n];
             y = rows[i + 1].getElementsByTagName("TD")[n];
 
-            if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+            //condition for rating column
+            if (n === 1) {
+                if (Number(x.innerHTML) > Number(y.innerHTML)) {
+                  shouldSwitch = true;
+                  break;
+                }
+                //condition for movie title
+            } else if(x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()){
                 shouldSwitch = true;
                 break;
             }
-
-            // else if (dir == "desc") {
-            //     if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
-            //         //if so, mark as a switch and break the loop:
-            //         shouldSwitch = true;
-            //         break;
-            //     }
-            // }
         }
         if (shouldSwitch) {
             /*If a switch has been marked, make the switch
@@ -116,12 +115,6 @@ function ascOrder(n) {
             switching = true;
             switchcount++;
         }
-        // else {
-        //     if (switchcount == 0 && dir == "asc") {
-        //         dir = "desc";
-        //         switching = true;
-        //     }
-        // }
     }
 }
 
@@ -146,7 +139,14 @@ function descOrder(n) {
             x = rows[i].getElementsByTagName("TD")[n];
             y = rows[i + 1].getElementsByTagName("TD")[n];
 
-            if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+            //condition for rating column
+            if (n === 1) {
+                if (Number(x.innerHTML) < Number(y.innerHTML)) {
+                  shouldSwitch = true;
+                  break;
+                }
+                //condition for movie title
+            } else if(x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()){
                 shouldSwitch = true;
                 break;
             }
