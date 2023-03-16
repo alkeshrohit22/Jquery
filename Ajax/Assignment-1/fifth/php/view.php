@@ -23,5 +23,5 @@ try {
     exit;
 
 } catch (PDOException $error) {
-    echo 'Error : ' . $e;
+    echo 'Error in view : ' . $e;
 }

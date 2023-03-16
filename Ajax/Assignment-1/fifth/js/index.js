@@ -70,7 +70,7 @@ function viewData() {
             $('#rating').val('');
         },
         error: function (resp) {
-            alert("Error : " + resp);
+            alert("Error in viewData : " + resp);
         }
     });
 }

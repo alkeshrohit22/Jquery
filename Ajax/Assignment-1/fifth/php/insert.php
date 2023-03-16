@@ -23,7 +23,7 @@ try {
 
     $stmt->bindParam(':title', $movie_title);
     $stmt->bindParam(':rating', $movie_rating);
-    // $stmt->execute();
+    $stmt->execute();
 
     $return_array = array('Success'=>'Success');
     echo json_encode($return_array);
