@@ -20,7 +20,7 @@ $(document).ready(function () {
                 }
 
                 if (username == 'success' && password == 'success') {
-                    window.location.href = 'view.html';
+                    window.location.href = 'form.html';
                 } else if (username == 'failed' && password == 'success') {
                     alert('Incorrect username!!!');
                 } else if (username == 'success' && password == 'failed') {
