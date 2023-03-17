@@ -2,9 +2,9 @@
 
 include_once 'connection.php';
 
+$final_return = array();
 $return_array = array();
 $db_array = array();
-$final_return = array('success' => false);
 $db_email = $db_password = '';
 
 try {
@@ -46,16 +46,19 @@ try {
             array_push($return_array, $db_array);
         }
 
-        // Loop through the outer array
-        for ($i = 0; $i < count($return_array); $i++) {
+        $len = count($return_array);
 
-            // Loop through the associative inner array
-            foreach ($return_array[$i] as $key => $value) {
-                if($key['username'] == $login_username && $key['password']){
-                    $final_return['success'] = true;
-                }
+        for($i = 0; $i < $len; $i++){
+            $username = $return_array[$i]['username'];
+            $password = $return_array[$i]['password'];
+
+            if($username == $login_username && $password == $login_password){
+                $final_return['success'] = true;
+                echo json_encode($final_return);
+                exit;
             }
         }
+        $final_return['success'] = false;
         echo json_encode($final_return);
         exit;
     } else {

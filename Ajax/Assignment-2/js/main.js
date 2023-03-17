@@ -12,25 +12,14 @@ $(document).ready(function () {
             success: function (resp) {
                 const response = JSON.parse(resp);
 
-                if(response['success'] == false){
+                if(response['success'] == true){
+                    window.location.href = 'view.html';
+                } else if(response['success'] == false){
                     alert('You are not register user!!!');
                     window.location.href = 'registration.html';
+                } else {
+                    alert('Register First!!!');
                 }
-                console.log(resp);
-                // const response = JSON.parse(resp);
-                // respLen = Object.keys(response).length;
-                // console.log(respLen);
-
-                // for (var i = 0; i < respLen; i++) {
-                //     success = response['success'];
-                // }
-
-                // if (success == true) {
-                //     window.location.href = 'form.html';
-                // } else {
-                //     alert('you are not register user!!!');
-                //     window.location.href = 'registration.html';
-                // }
             },
             error: function (resp) {
                 alert("Error : " + resp);
