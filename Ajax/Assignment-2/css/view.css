@@ -14,3 +14,17 @@ body {
 .container h2 a {
     margin: 0px 0px 0px 25px;
 }
+
+.UpdateBtn {
+    color: white;
+    background-color: orange;
+    border-radius: 10px;
+    border: 4px;
+}
+
+.deleteBtn {
+    color: white;
+    background-color: red;
+    border-radius: 10px;
+    border: 4px;
+}

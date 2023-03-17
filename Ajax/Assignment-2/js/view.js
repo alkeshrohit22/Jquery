@@ -64,8 +64,8 @@ function viewData() {
                 tableRows += "<td>" + response[i].userid + "</td>";
                 tableRows += "<td>" + response[i].title + "</td>";
                 tableRows += "<td>" + response[i].description + "</td>";
-                tableRows += "<td><button type='button' id='UpdateBtn' onclick='moveToUpdate(" + response[i].id + ")'>Update</button></td>";
-                tableRows += "<td><button type='button' id='deleteBtn' onclick='moveToDelete(" + response[i].id + ")'>Delete</button></td>";
+                tableRows += "<td><button type='button' class='UpdateBtn' id='UpdateBtn' onclick='moveToUpdate(" + response[i].id + ")'>Update</button></td>";
+                tableRows += "<td><button type='button' class='deleteBtn' id='deleteBtn' onclick='moveToDelete(" + response[i].id + ")'>Delete</button></td>";
                 tableRows += "</tr>";
             }
             //$('#tbody').remove();
