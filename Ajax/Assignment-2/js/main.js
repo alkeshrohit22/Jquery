@@ -13,7 +13,7 @@ $(document).ready(function () {
                 const response = JSON.parse(resp);
 
                 if(response['success'] == true){
-                    window.location.href = 'view.html';
+                    window.location.href = 'form.html';
                 } else if(response['success'] == false){
                     alert('You are not register user!!!');
                     window.location.href = 'registration.html';
