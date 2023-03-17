@@ -22,13 +22,15 @@
                 </div>
             </div>
             <form class="login-form" id="loginform" method="post">
-                <span class="error">*</span>
-                <input type="text" id="username" name="name" placeholder="admin">
+                <span class="error">*required</span>
+                <input type="email" id="username" name="name" placeholder="admin" required >
 
-                <span class="error">*</span>
-                <input type="text" id="password" name="password" placeholder="admin">
+                <span class="error">*required</span>
+                <input type="text" id="password" name="password" placeholder="admin" required >
 
-                <button type="submit" id="loginBtn" value="submit" >Submit</button>
+                <button type="submit" id="loginBtn" value="submit" >Submit</button><br><br>
+
+                <span><a href="registration.html">New User</a></span>
             </form>
         </div>
     </div>

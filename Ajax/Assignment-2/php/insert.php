@@ -2,10 +2,6 @@
 include "connection.php";
 //table creation and insert data into table
 
-// $PrimaryFlag = true;
-
-// $IdError = $PostTittleError = $PostDescriptionError = '';
-
 $user_ID = $PostTitle = $PostDescription = '';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -16,6 +12,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $post_description = $_POST['desc'];
 
     try {
+
+        $conn->query('use MyDatabase');
 
         //create table query
         $tableSql = "CREATE TABLE IF NOT EXISTS Posts (

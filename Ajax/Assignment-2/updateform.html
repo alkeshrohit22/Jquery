@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/form.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <title>Update Form</title>
+</head>
+
+<body>
+    <div class="form">
+        <div class="title">Sigma InfoSolution LTD</div>
+        <div class="subtitle">Update Form</div>
+        <div class="input-container ic1">
+            <form action="" method="post" id="updateForm">
+                <input type="number" name="id" id="id" placeholder="Enter your employee ID" required />
+                <div class="cut"></div>
+        </div>
+        <div class="input-container ic1">
+            <input type="text" name="name" id="name" placeholder="Enter your Name" required>
+            <div class="cut"></div>
+        </div>
+        <div class="input-container ic2">
+            <textarea name="desc" id="desc" cols="25" rows="5" placeholder="comment" required></textarea>
+            <div class="cut cut-short"></div>
+        </div>
+        <button type="submit" name="submit" value="submit" class="submit">Update</button>
+        </form>
+    </div>
+
+    <script src="js/update.js"></script>
+</body>
+
+</html>

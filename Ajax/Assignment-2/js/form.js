@@ -11,10 +11,12 @@ $(document).ready(function() {
             },
             dataType: 'json',
             success: function(response) {
+                console.log(response.success);
                 if(response.success == true){
-                    window.location.href = "view.html";
+                    alert(response.message);
+                    window.location.href = 'view.html';
                 }
-                alert(response.message);
+               
             },
             statusCode: {
                 409: function(response) {
@@ -25,3 +27,17 @@ $(document).ready(function() {
         });
     });
 });
+
+// function viewData(){
+//     $.ajax({
+//         url : 'php/view.php',
+//         type : 'post',
+//         dataType : 'JSON',
+//         success : function(response){
+//             console.log(response);
+//         },
+//         error : function(response){
+//             alert("Error : " + response);
+//         }
+//     })
+// }
