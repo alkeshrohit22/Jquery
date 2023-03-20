@@ -29,6 +29,16 @@ body {
     border: 4px;
 }
 
-tr:nth-child(odd) {
+tr:first-child{
+    background-color: rgba(0, 0, 0, 0.651);
+    color: white;
+}
+
+#tbody > tr:nth-child(odd) {
     background-color: Lightgreen;
+    color: black;
+}
+
+#tbody > tr:nth-child(even) {
+    background-color: green;
 }
