@@ -1,16 +1,9 @@
 <?php
-
-$servername = "localhost";
-$username = "admin";
-$password = "admin";
+include "connection.php";
 
 $first_name = $last_name = $email = $user_password = '';
 
 try {
-    $conn = new PDO("mysql:host=$servername", $username, $password);
-
-    // set the PDO error mode to exception
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     $DBsql = 'CREATE DATABASE IF NOT EXISTS MyDatabase';
     $conn->exec($DBsql);
@@ -106,5 +99,3 @@ try {
 } catch (PDOException $e) {
     echo 'Error ' . $e->getMessage();
 }
-
-$conn = null;
