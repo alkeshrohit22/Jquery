@@ -51,7 +51,7 @@ try {
         echo json_encode(array("success" => false, "message" => "To much character in first name!!!"));
         exit;
     }
-    if(!preg_match($regex_name, $first_name)){
+    if (!preg_match($regex_name, $first_name)) {
         echo json_encode(array("success" => false, "message" => "Invalid First name!!!"));
         exit;
     }
@@ -65,18 +65,23 @@ try {
         echo json_encode(array("success" => false, "message" => "To much character in last name!!!"));
         exit;
     }
-    if(!preg_match($regex_name, $last_name)){
+    if (!preg_match($regex_name, $last_name)) {
         echo json_encode(array("success" => false, "message" => "Invalid Last name!!!"));
         exit;
     }
 
     //already register email validation
+    $email_reg = "/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/";
     $fetch_email = $conn->query("SELECT * FROM Users WHERE `email`='$email'");
     while ($row = $fetch_email->fetch(PDO::FETCH_ASSOC)) {
         if ($row['email'] == $email) {
             echo json_encode(array("success" => false, "message" => "This email already registred!!!"));
             exit;
         }
+    }
+    if (!preg_match($email_reg, $email)) {
+        echo json_encode(array("success" => false, "message" => "Invalid Email!!!"));
+        exit;
     }
 
     //password validation
@@ -85,11 +90,10 @@ try {
         echo json_encode(array("success" => false, "message" => "To less character in password!!!"));
         exit;
     }
-    if(!preg_match($password_RegExp, $user_password)){
+    if (!preg_match($password_RegExp, $user_password)) {
         echo json_encode(array("success" => false, "message" => "Invalid Password!!!"));
         exit;
     }
-
 
     if ($stm->execute() == true) {
         echo json_encode(array("success" => true, "message" => "Register sucssesfully."));
