@@ -15,7 +15,7 @@ $(document).ready(function () {
                 if (value == 'Success') {
                     viewData();
                 } else {
-                    alert("Wrong Value rating value!!!");
+                    alert("Wrong rating value!!!");
                 }
             },
             error: function (resp) {
