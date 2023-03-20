@@ -13,10 +13,11 @@ $(document).ready(function(){
             datatype : 'JSON',
             success : function (response){
                 const resp = JSON.parse(response);
-                console.log('response : ' + response);
                 if(resp['success'] == true){
                     alert(resp['message']);
                     window.location.href = "index.html";
+                } else {
+                    alert(resp['message']);
                 }
             },
             error: function(response){

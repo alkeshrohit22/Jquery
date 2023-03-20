@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 $servername = "localhost";
 $username = "admin";
@@ -41,8 +41,58 @@ try {
     $email = $_POST['email'];
     $user_password = $_POST['password'];
 
-    if($stm->execute() == true ){
-        echo json_encode(array("success"=>true,"message" => "Register sucssesfully."));
+    // first name validation
+    $regex_name = "/^[a-zA-Z]+$/";
+    if (strlen($first_name) <= 2) {
+        echo json_encode(array("success" => false, "message" => "To less character in first name!!!"));
+        exit;
+    }
+    if (strlen($first_name) > 26) {
+        echo json_encode(array("success" => false, "message" => "To much character in first name!!!"));
+        exit;
+    }
+    if(!preg_match($regex_name, $first_name)){
+        echo json_encode(array("success" => false, "message" => "Invalid First name!!!"));
+        exit;
+    }
+
+    //last name validation
+    if (strlen($last_name) <= 2) {
+        echo json_encode(array("success" => false, "message" => "To less character in last name!!!"));
+        exit;
+    }
+    if (strlen($last_name) > 26) {
+        echo json_encode(array("success" => false, "message" => "To much character in last name!!!"));
+        exit;
+    }
+    if(!preg_match($regex_name, $last_name)){
+        echo json_encode(array("success" => false, "message" => "Invalid Last name!!!"));
+        exit;
+    }
+
+    //already register email validation
+    $fetch_email = $conn->query("SELECT * FROM Users WHERE `email`='$email'");
+    while ($row = $fetch_email->fetch(PDO::FETCH_ASSOC)) {
+        if ($row['email'] == $email) {
+            echo json_encode(array("success" => false, "message" => "This email already registred!!!"));
+            exit;
+        }
+    }
+
+    //password validation
+    $password_RegExp = "/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/";
+    if (strlen($user_password) < 8) {
+        echo json_encode(array("success" => false, "message" => "To less character in password!!!"));
+        exit;
+    }
+    if(!preg_match($password_RegExp, $user_password)){
+        echo json_encode(array("success" => false, "message" => "Invalid Password!!!"));
+        exit;
+    }
+
+
+    if ($stm->execute() == true) {
+        echo json_encode(array("success" => true, "message" => "Register sucssesfully."));
         exit;
     } else {
         echo "Data Not insterted !!!";
@@ -50,8 +100,7 @@ try {
     }
 
 } catch (PDOException $e) {
-    echo  'Error '. $e->getMessage();
+    echo 'Error ' . $e->getMessage();
 }
 
 $conn = null;
-?>

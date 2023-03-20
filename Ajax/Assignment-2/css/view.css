@@ -28,3 +28,7 @@ body {
     border-radius: 10px;
     border: 4px;
 }
+
+tr:nth-child(odd) {
+    background-color: Lightgreen;
+}

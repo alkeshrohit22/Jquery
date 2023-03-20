@@ -24,6 +24,45 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             )";
         $conn->exec($tableSql);
 
+        //user id validation
+        $fetch_id = $conn->query("SELECT * FROM Posts WHERE `user_id`='$user_id'");
+        while ($row = $fetch_id->fetch(PDO::FETCH_ASSOC)) {
+            if ($row['user_id'] == $user_id) {
+                echo json_encode(array("success" => false, "message" => "Already registred User Id!!!"));
+                exit;
+            }
+        }
+
+        if (strlen($user_id) > 20) {
+            echo json_encode(array("success" => false, "message" => "To Long User Id!!!"));
+            exit;
+        }
+
+        //name valdiation
+        $regex_name = "/^[a-zA-Z]+$/";
+        if (strlen($post_title) <= 2) {
+            echo json_encode(array("success" => false, "message" => "To less character in name!!!"));
+            exit;
+        }
+        if (strlen($post_title) > 500) {
+            echo json_encode(array("success" => false, "message" => "To much character in name!!!"));
+            exit;
+        }
+        if (!preg_match($regex_name, $post_title)) {
+            echo json_encode(array("success" => false, "message" => "Invalid name!!!"));
+            exit;
+        }
+
+        //description validation
+        if (strlen($post_description) < 5) {
+            echo json_encode(array("success" => false, "message" => "To less character in description!!!"));
+            exit;
+        }
+        if (strlen($post_description) > 10000) {
+            echo json_encode(array("success" => false, "message" => "To Much character in description!!!"));
+            exit;
+        }
+
         // insert post data into table
         $stm = $conn->prepare("INSERT INTO Posts (user_id, post_title, post_description)
         VALUES (:user_id, :post_title, :post_description)");
@@ -31,10 +70,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stm->bindParam(':user_id', $user_id);
         $stm->bindParam(':post_title', $post_title);
         $stm->bindParam(':post_description', $post_description);
-        
 
         if ($stm->execute() == true) {
-            echo json_encode(array("success"=>true,"message" => "Insert sucssesfully."));
+            echo json_encode(array("success" => true, "message" => "Insert sucssesfully."));
             exit;
         } else {
             echo "Data not insert into database!!!";
@@ -45,5 +83,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
 }
-
-?>

@@ -15,9 +15,9 @@ $(document).ready(function () {
                 if(response['success'] == true){
                     window.location.href = 'form.html';
                 } else if(response['success'] == false){
-                    alert('You are not register user!!!');
-                    window.location.href = 'registration.html';
+                    alert('You are not register user, Please Register First!!!');
                 } else {
+                    window.location.href = 'registration.html';
                     alert('Register First!!!');
                 }
             },
