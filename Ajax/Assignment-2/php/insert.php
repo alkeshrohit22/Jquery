@@ -39,17 +39,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         //name valdiation
-        $regex_name = "^[a-zA-Z]+(\s[a-zA-Z]+)?$";
         if (strlen($post_title) <= 2) {
             echo json_encode(array("success" => false, "message" => "To less character in name!!!"));
             exit;
         }
         if (strlen($post_title) > 500) {
             echo json_encode(array("success" => false, "message" => "To much character in name!!!"));
-            exit;
-        }
-        if (!preg_match($regex_name, $post_title)) {
-            echo json_encode(array("success" => false, "message" => "Invalid name!!!"));
             exit;
         }
 
