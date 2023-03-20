@@ -12,7 +12,8 @@ try {
     $conn->query('use MyDatabase');
 
     $dbSQL = "DELETE FROM Posts WHERE `id`=$id";
-    if($conn->exec($dbSQL) == true){
+    $stm = $conn->prepare($dbSQL);
+    if($stm->execute() == true){
         $return_array = array("success"=>true);
     }
 
