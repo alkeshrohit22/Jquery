@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         //name valdiation
-        $regex_name = "/^[a-zA-Z][a-zA-Z\\s]+$/";
+        $regex_name = "[a-zA-Z][a-zA-Z ]+[a-zA-Z]$";
         if (strlen($post_title) <= 2) {
             echo json_encode(array("success" => false, "message" => "To less character in name!!!"));
             exit;
