@@ -17,7 +17,7 @@ $(document).ready(function () {
                 } else if(response['success'] == false){
                     alert('You are not register user, Please Register First!!!');
                 } else {
-                    window.location.href = 'registration.html';
+                    //window.location.href = 'registration.html';
                     alert('Register First!!!');
                 }
             },
