@@ -13,7 +13,8 @@ try {
 
     //checking movie rating
     if ($movie_rating > 10) {
-        echo "<h2>You Enter More than 10 value!!!</h2>";
+        $return_array = array('Success' => 'failed');
+        echo json_encode($return_array);
         exit;
     }
 
@@ -25,11 +26,10 @@ try {
     $stmt->bindParam(':rating', $movie_rating);
     $stmt->execute();
 
-    $return_array = array('Success'=>'Success');
+    $return_array = array('Success' => 'Success');
     echo json_encode($return_array);
     exit;
 
 } catch (PDOException $error) {
     echo "Error : " . $error->getMessage();
 }
-?>
