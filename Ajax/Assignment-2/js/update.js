@@ -26,6 +26,8 @@ $(document).ready(function () {
 
                 if (response['success'] == true) {
                     window.location.href = 'view.html';
+                } else {
+                    alert(response["message"]);
                 }
             },
             error: function (resp) {
