@@ -2,6 +2,7 @@
 include "connection.php";
 
 $first_name = $last_name = $email = $user_password = '';
+$first = $last = $email_trim = $password_trim = "";
 
 try {
 
@@ -29,10 +30,16 @@ try {
     $stm->bindParam(':email', $email);
     $stm->bindParam(':user_password', $user_password);
 
-    $first_name = $_POST['firstname'];
-    $last_name = $_POST['lastname'];
-    $email = strtolower($_POST['email']);
-    $user_password = $_POST['password'];
+    
+    $first= $_POST['firstname'];
+    $last = $_POST['lastname'];
+    $email_trim = strtolower($_POST['email']);
+    $password_trim = $_POST['password'];
+
+    $first_name = test_input($first);
+    $last_name = test_input($last);
+    $email = test_input($email_trim);
+    $user_password = test_input($password_trim);
 
     // first name validation
     $regex_name = "/^[a-zA-Z]+$/";
@@ -45,7 +52,7 @@ try {
         exit;
     }
     if (!preg_match($regex_name, $first_name)) {
-        echo json_encode(array("success" => false, "message" => "Invalid First name!!!"));
+        echo json_encode(array("success" => false, "message" => "Should be Alphabets only in First name (No blank Space Expexted)!!!"));
         exit;
     }
 
@@ -59,7 +66,7 @@ try {
         exit;
     }
     if (!preg_match($regex_name, $last_name)) {
-        echo json_encode(array("success" => false, "message" => "Invalid Last name!!!"));
+        echo json_encode(array("success" => false, "message" => "Should be Alphabets only in last name (No blank Space Expexted)!!!"));
         exit;
     }
 
@@ -84,7 +91,7 @@ try {
         exit;
     }
     if (!preg_match($password_RegExp, $user_password)) {
-        echo json_encode(array("success" => false, "message" => "Invalid Password!!!"));
+        echo json_encode(array("success" => false, "message" => "Password should be contain Alphabet, Number, One uppercase letter and Special Character!!!"));
         exit;
     }
 
@@ -98,4 +105,12 @@ try {
 
 } catch (PDOException $e) {
     echo 'Error ' . $e->getMessage();
+}
+
+function test_input($data)
+{
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
 }

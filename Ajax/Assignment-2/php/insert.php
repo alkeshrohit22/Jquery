@@ -3,13 +3,19 @@ include "connection.php";
 //table creation and insert data into table
 
 $user_ID = $PostTitle = $PostDescription = '';
+$id = $title = $description = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     //get data from user input
-    $user_id = $_POST['id'];
-    $post_title = $_POST['name'];
-    $post_description = $_POST['desc'];
+    $id = $_POST['id'];
+    $title = $_POST['name'];
+    $description = $_POST['desc'];
+
+    //remove unwanted space
+    $user_id = (int)test_input($id);
+    $post_title = test_input($title);
+    $post_description = test_input($description);
 
     try {
 
@@ -20,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             id INT(20) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
             user_id INT(20),
             post_title VARCHAR(500) NOT NULL,
-            post_description VARCHAR(10000) NOT NULL
+            post_description LONGTEXT NOT NULL
             )";
         $conn->exec($tableSql);
 
@@ -32,8 +38,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 exit;
             }
         }
-
-        if (strlen($user_id) > 20) {
+        if($user_id <= 0) {
+            echo json_encode(array("success" => false, "message" => "Negative value or Zero Value not exepted!!!"));
+            exit;
+        }
+        if ($user_id > 20000000000000000000) {
             echo json_encode(array("success" => false, "message" => "To Long User Id!!!"));
             exit;
         }
@@ -76,5 +85,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } catch (PDOException $e) {
         echo 'Error ' . $e->getMessage();
     }
-
 }
+
+function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+  

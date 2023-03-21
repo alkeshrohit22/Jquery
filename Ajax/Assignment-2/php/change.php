@@ -3,18 +3,27 @@
 include_once 'connection.php';
 
 $primary_id = $fet_id = $fet_title = $fet_desc = '';
+$id = $title = $desc = "";
 
 try {
     $primary_id = (int)$_POST['delete_key']; 
-    $fet_id = $_POST['id'];
-    $fet_title = $_POST['name'];
-    $fet_desc = $_POST['desc'];
+    $id = $_POST['id'];
+    $title = $_POST['name'];
+    $desc = $_POST['desc'];
+
+    $fet_id = (int)test_input($id);
+    $fet_title = test_input($title);
+    $fet_desc = test_input($desc);
 
     //selecting database
     $conn->query('use MyDatabase');
 
     //user id validation
-    if (strlen($fet_id) > 20) {
+    if($fet_id <= 0 ){
+        echo json_encode(array("success" => false, "message" => "Negative value and Zeros are not excepted!!!"));
+        exit;
+    }
+    if ($fet_id > 20000000000000000000) {
         echo json_encode(array("success" => false, "message" => "To Long User Id!!!"));
         exit;
     }
@@ -54,4 +63,11 @@ try {
 
 } catch (PDOException $error) {
     echo "Error : "+$error;
+}
+
+function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
 }
