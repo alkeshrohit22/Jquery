@@ -14,27 +14,27 @@ try {
     $conn->query('use MyDatabase');
 
     //user id validation
-    if (strlen($user_id) > 20) {
+    if (strlen($fet_id) > 20) {
         echo json_encode(array("success" => false, "message" => "To Long User Id!!!"));
         exit;
     }
 
     //name valdiation
-    if (strlen($post_title) <= 2) {
+    if (strlen($fet_title) <= 2) {
         echo json_encode(array("success" => false, "message" => "To less character in name!!!"));
         exit;
     }
-    if (strlen($post_title) > 500) {
+    if (strlen($fet_title) > 500) {
         echo json_encode(array("success" => false, "message" => "To much character in name!!!"));
         exit;
     }
 
     //description validation
-    if (strlen($post_description) < 5) {
+    if (strlen($fet_desc) < 5) {
         echo json_encode(array("success" => false, "message" => "To less character in description!!!"));
         exit;
     }
-    if (strlen($post_description) > 10000) {
+    if (strlen($fet_desc) > 10000) {
         echo json_encode(array("success" => false, "message" => "To Much character in description!!!"));
         exit;
     }
