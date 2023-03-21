@@ -9,7 +9,7 @@ $db_email = $db_password = '';
 
 try {
 
-    $login_username = $_POST['username'];
+    $login_username = strtolower($_POST['username']);
     $login_password = $_POST['password'];
 
     $DBsql = 'CREATE DATABASE IF NOT EXISTS MyDatabase';
@@ -37,7 +37,7 @@ try {
         $db_value = $conn->query("SELECT email, user_password FROM Users");
         while ($row = $db_value->fetch(PDO::FETCH_ASSOC)) {
 
-            $db_email = $row['email'];
+            $db_email = strtolower($row['email']);
             $db_password = $row['user_password'];
 
             $db_array = array("username" => $db_email,
