@@ -31,7 +31,7 @@ try {
 
     $first_name = $_POST['firstname'];
     $last_name = $_POST['lastname'];
-    $email = $_POST['email'];
+    $email = strtolower($_POST['email']);
     $user_password = $_POST['password'];
 
     // first name validation
@@ -67,7 +67,7 @@ try {
     $email_reg = "/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/";
     $fetch_email = $conn->query("SELECT * FROM Users WHERE `email`='$email'");
     while ($row = $fetch_email->fetch(PDO::FETCH_ASSOC)) {
-        if ($row['email'] == $email) {
+        if (strtolower($row['email']) == $email) {
             echo json_encode(array("success" => false, "message" => "This email already registred!!!"));
             exit;
         }
