@@ -14,13 +14,6 @@ try {
     $conn->query('use MyDatabase');
 
     //user id validation
-    $fetch_id = $conn->query("SELECT * FROM Posts WHERE `user_id`='$fet_id'");
-    while ($row = $fetch_id->fetch(PDO::FETCH_ASSOC)) {
-        if ($row['user_id'] == $fet_id) {
-            echo json_encode(array("success" => false, "message" => "Already registred User Id!!!"));
-            exit;
-        }
-    }
     if (strlen($user_id) > 20) {
         echo json_encode(array("success" => false, "message" => "To Long User Id!!!"));
         exit;
