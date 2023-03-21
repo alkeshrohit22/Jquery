@@ -2,7 +2,7 @@
 include "connection.php";
 //table creation and insert data into table
 
-$user_ID = $PostTitle = $PostDescription = '';
+$user_id = $post_title = $post_description = "";
 $id = $title = $description = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
